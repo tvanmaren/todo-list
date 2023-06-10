@@ -33,7 +33,7 @@ Simple todo list React/Express demo application
 - [x] Leverage Express generator to get up and running quickly
 - [x] Install Tailwind CSS (going to be a first for me)
 - [x] Install React Router
-- [ ] Setup REST API (CRUD) for Todo items (/items, /items/:id) w/ in-memory storage
+- [x] Setup REST API (CRUD) for Todo items (/items, /items/:id) w/ in-memory storage
 - [ ] Build Item component
 - [ ] Build ItemList component
 - [ ] Build ItemForm component
