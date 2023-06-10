@@ -8,13 +8,13 @@ Simple todo list React/Express demo application
 
 - [x] Use React or NextJS for the FrontEnd
 
-- [ ] Use a CSS framework of your choice
+- [x] Use a CSS framework of your choice
 
-- [ ] Use a CSS convention of your choice (Preprocessors, Modules, CSS-in-JS, etc.)
+- [x] Use a CSS convention of your choice (Preprocessors, Modules, CSS-in-JS, etc.)
 
 - [ ] Implement all CRUD actions
 
-- [ ] Implement routing
+- [x] Implement routing
 
 - [x] Implement a Node/Express Backend
 
@@ -32,7 +32,7 @@ Simple todo list React/Express demo application
 - [x] Leverage Create React App to get up and running quickly
 - [x] Leverage Express generator to get up and running quickly
 - [x] Install Tailwind CSS (going to be a first for me)
-- [ ] Install React Router
+- [x] Install React Router
 - [ ] Setup REST API (CRUD) for Todo items (/items, /items/:id) w/ in-memory storage
 - [ ] Build Item component
 - [ ] Build ItemList component
