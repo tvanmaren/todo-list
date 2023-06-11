@@ -12,15 +12,15 @@ Simple todo list React/Express demo application
 
 - [x] Use a CSS convention of your choice (Preprocessors, Modules, CSS-in-JS, etc.)
 
-- [ ] Implement all CRUD actions
+- [x] Implement all CRUD actions
 
 - [x] Implement routing
 
 - [x] Implement a Node/Express Backend
 
-- [ ] Setup a few CRUD routes/endpoints for the app
+- [x] Setup a few CRUD routes/endpoints for the app
 
-- [ ] No need for a datastore, you can just echo back static results
+- [x] No need for a datastore, you can just echo back static results
 
 ### Bonus
 
@@ -36,12 +36,12 @@ Simple todo list React/Express demo application
 - [x] Setup REST API (CRUD) for Todo items (/items, /items/:id) w/ in-memory storage
 - [x] Build Item component
 - [x] Build ItemList component
-- [ ] Build ItemForm component
-- [ ] Display ItemForm at bottom of screen, ItemList at top of screen
+- [x] Build ItemForm component
+- [x] Display ItemForm at bottom of screen, ItemList at top of screen
 - [ ] Editing item routes to ItemForm pre-populated with current item data
 - [ ] Submitting ItemForm (edit) updates item
-- [ ] Submitting ItemForm (new) creates item
-- [ ] Deleting item deletes item
+- [x] Submitting ItemForm (new) creates item
+- [x] Deleting item deletes item
 - [ ] Finalize tests
 - [ ] Deploy to Firebase (another first for me)
 - [ ] Handle CORS issues?
