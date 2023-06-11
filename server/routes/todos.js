@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const todos = [{ id: '1', title: 'First todo', completed: false}];
+const todos = [{ id: Date.now().toString(), title: 'First todo', completed: false}];
 
 // TODO: Error handling
 // TODO: convert to typescript to make this SAFER
@@ -20,7 +20,6 @@ router.get('/:id', function(req, res, next) {
 router.post('/', function(req, res, next) {
   const newEntry = { ...req.body, id: Date.now().toString() };
   todos.push(newEntry);
-  console.log(todos);
   res.send(newEntry);
 });
 

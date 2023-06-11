@@ -1,34 +1,53 @@
-import { useCallback } from 'react';
+import { useEffect, useState } from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import { Checkbox, Fab, FormControlLabel, FormGroup } from '@mui/material';
 import logo from './logo.svg';
 import './App.css';
+import { Todo } from 'types';
+import { useGetTodoList } from 'hooks/useGetTodoList';
+
+const fixedBottomRight = {
+  position: 'fixed',
+  bottom: '2vh',
+  right: '2vh'
+};
 
 export function App() {
-  const getTodoList = useCallback(async () => {
-    const response = await fetch(`todos`, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
+  const [todoList, setTodoList] = useState<Todo[]>([]);
+  const getTodoList = useGetTodoList()
+
+  useEffect(() => {
+    getTodoList().then((todoList) => {
+      setTodoList(todoList);
     });
-    console.log(response);
-    const body = await response.json();
-    console.log(body);
-  }, [])
+  }, [getTodoList]);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          {JSON.stringify(getTodoList())}
+          React Todo List w/ Typescript & Express
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div>
+        <FormGroup>
+          {todoList.map((todo) => (
+            <FormControlLabel
+              key={todo.id}
+              control={
+                <Checkbox checked={todo.completed}
+                  onChange={() => console.log('clicked')}
+                />
+              }
+              label={todo.title}
+            />
+          ))}
+        </FormGroup>
+        <Fab className="Add-icon" color="primary" aria-label="add" href="/new" sx={fixedBottomRight}>
+          <AddIcon />
+        </Fab>
+      </div>
     </div>
   );
 }
