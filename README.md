@@ -38,8 +38,8 @@ Simple todo list React/Express demo application
 - [x] Build ItemList component
 - [x] Build ItemForm component
 - [x] Display ItemForm at bottom of screen, ItemList at top of screen
-- [ ] Editing item routes to ItemForm pre-populated with current item data
-- [ ] Submitting ItemForm (edit) updates item
+- [x] Editing item routes to ItemForm pre-populated with current item data
+- [x] Submitting ItemForm (edit) updates item
 - [x] Submitting ItemForm (new) creates item
 - [x] Deleting item deletes item
 - [ ] Finalize tests
