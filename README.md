@@ -34,8 +34,8 @@ Simple todo list React/Express demo application
 - [ ] Install Tailwind CSS (going to be a first for me)
 - [x] Install React Router
 - [x] Setup REST API (CRUD) for Todo items (/items, /items/:id) w/ in-memory storage
-- [ ] Build Item component
-- [ ] Build ItemList component
+- [x] Build Item component
+- [x] Build ItemList component
 - [ ] Build ItemForm component
 - [ ] Display ItemForm at bottom of screen, ItemList at top of screen
 - [ ] Editing item routes to ItemForm pre-populated with current item data

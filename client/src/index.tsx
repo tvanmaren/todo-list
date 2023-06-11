@@ -5,13 +5,15 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-import { App } from './App';
+import logo from 'assets/logo.svg';
+import express from 'assets/express.svg';
+import TodoList from 'components/TodoList/TodoList';
 import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <TodoList />,
   },
   {
     path: '/new',
@@ -22,7 +24,18 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className="App">
+      <header className="App-header">
+        <div className="Logo-container">
+          <img src={logo} className="App-logo" alt="logo" />
+          <img src={express} className="Express-logo" alt="logo" />
+        </div>
+        <p>
+          React Todo List w/ Typescript & Express
+        </p>
+      </header>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>
 );
 
