@@ -1,13 +1,32 @@
-import { type FormEvent, type Ref } from 'react'
 import { Box, TextField } from '@mui/material'
+import { type FormEvent, forwardRef } from 'react'
 
 interface TodoItemFormProps {
+  defaultValue?: string
   handleSubmit: (event: FormEvent<HTMLFormElement>) => Promise<void>
-  inputRef: Ref<HTMLInputElement>
 }
 
-export default function TodoItemForm ({ handleSubmit, inputRef }: TodoItemFormProps): JSX.Element {
-  return <Box component="form" display="flex" onSubmit={(event: FormEvent<HTMLFormElement>) => { void handleSubmit(event) }}>
-    <TextField label="Add Todo Entry" variant="filled" inputRef={inputRef} required helperText="Press Enter to submit" />
-  </Box>
-}
+export default forwardRef<HTMLInputElement, TodoItemFormProps>(function TodoItemForm(
+  { defaultValue, handleSubmit },
+  ref,
+): JSX.Element {
+  return (
+    <Box
+      component='form'
+      display='flex'
+      onSubmit={(event: FormEvent<HTMLFormElement>) => {
+        void handleSubmit(event)
+      }}
+    >
+      <TextField
+        label='Add Todo Entry'
+        helperText='Press Enter to submit'
+        defaultValue={defaultValue}
+        variant='filled'
+        inputRef={ref}
+        required
+        fullWidth
+      />
+    </Box>
+  )
+})
