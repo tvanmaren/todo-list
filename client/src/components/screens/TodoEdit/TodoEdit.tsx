@@ -1,4 +1,4 @@
-import { Box, Drawer } from '@mui/material'
+import { Box, Drawer, Typography } from '@mui/material'
 import { type FormEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { type Todo } from 'types'
@@ -37,14 +37,17 @@ export default function TodoEdit(): JSX.Element {
   }, [])
 
   return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      justifyContent='center'
-      alignContent='flex-start'
-      width='100%'
-    >
-      {currentTodo === undefined ? null : <TodoItem todo={currentTodo} readOnly />}
+    <Box display='flex' justifyContent='center' alignContent='flex-start' width='100%'>
+      <Box display='flex' flexDirection='column' alignItems='center'>
+        <Box display='flex' flexDirection='row' alignItems='baseline'>
+          <Typography variant='h4'>Editing:</Typography>
+          <Typography variant='h5' marginLeft='1vw'>
+            {currentTodo?.title}
+          </Typography>
+        </Box>
+        {/* TODO: wire displayed TodoItem title into input value */}
+        {currentTodo && <TodoItem todo={currentTodo} readOnly />}
+      </Box>
       <Drawer
         anchor='bottom'
         sx={{ height: '80vh' }}

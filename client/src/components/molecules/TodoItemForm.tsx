@@ -26,6 +26,7 @@ export default forwardRef<HTMLInputElement, TodoItemFormProps>(function TodoItem
     >
       <TextField
         label='Add Todo Entry'
+        aria-label='Add Todo Entry'
         helperText='Press Enter to submit'
         defaultValue={defaultValue}
         variant='filled'
