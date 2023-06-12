@@ -11,5 +11,6 @@
   "vs-code-prettier-eslint.prettierLast": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-  } // set as "true" to run 'prettier' last not first
+  },
+  "editor.tabSize": 2 // set as "true" to run 'prettier' last not first
 }
