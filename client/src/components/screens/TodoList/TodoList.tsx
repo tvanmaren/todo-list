@@ -19,17 +19,15 @@ export default function TodoList(): JSX.Element {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const handleAddClick = useCallback(() => {
-    setIsDrawerOpen(true)
-    console.log(inputRef)
-    inputRef.current?.focus()
-  }, [inputRef])
-  const handleSubmit = useCallback(async (event: FormEvent<HTMLFormElement>): Promise<void> => {
-    event.preventDefault()
-    setIsDrawerOpen(false)
-    const newTodo = await createTodoItem({ title: inputRef.current?.value, completed: false })
-    setTodoList([...todoList, newTodo])
-  }, [])
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+      event.preventDefault()
+      setIsDrawerOpen(false)
+      const newTodo = await createTodoItem({ title: inputRef.current?.value, completed: false })
+      setTodoList([...todoList, newTodo])
+    },
+    [createTodoItem, setTodoList, todoList],
+  )
 
   useEffect(() => {
     void getTodoList()
@@ -59,7 +57,9 @@ export default function TodoList(): JSX.Element {
         className='Add-icon'
         color='primary'
         aria-label='add'
-        onClick={handleAddClick}
+        onClick={() => {
+          setIsDrawerOpen(true)
+        }}
         sx={fixedBottomRight}
       >
         <AddIcon />

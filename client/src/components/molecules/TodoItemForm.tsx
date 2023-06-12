@@ -1,5 +1,5 @@
 import { Box, TextField } from '@mui/material'
-import { type FormEvent, forwardRef } from 'react'
+import { type FormEvent, forwardRef, useEffect } from 'react'
 
 interface TodoItemFormProps {
   defaultValue?: string
@@ -10,6 +10,12 @@ export default forwardRef<HTMLInputElement, TodoItemFormProps>(function TodoItem
   { defaultValue, handleSubmit },
   ref,
 ): JSX.Element {
+  useEffect(() => {
+    if (typeof ref === 'function') return
+    if (ref === null || ref.current === null) return
+    ref.current.focus()
+  }, [ref])
+
   return (
     <Box
       component='form'

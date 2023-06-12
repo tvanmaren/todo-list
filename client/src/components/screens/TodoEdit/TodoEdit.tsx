@@ -15,24 +15,26 @@ export default function TodoEdit(): JSX.Element {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const handleSubmit = useCallback(async (event: FormEvent<HTMLFormElement>): Promise<void> => {
-    event.preventDefault()
-    if (
-      inputRef.current === null ||
-      currentTodo === undefined ||
-      inputRef.current?.value === currentTodo?.title
-    )
-      return
-    const updatedTodo: Todo = { ...currentTodo, title: inputRef.current.value }
-    await updateTodoItem(updatedTodo)
-    setIsDrawerOpen(false)
-    navigate('/')
-  }, [])
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+      event.preventDefault()
+      if (
+        inputRef.current === null ||
+        currentTodo === undefined ||
+        inputRef.current?.value === currentTodo?.title
+      )
+        return
+      const updatedTodo: Todo = { ...currentTodo, title: inputRef.current.value }
+      await updateTodoItem(updatedTodo)
+      setIsDrawerOpen(false)
+      navigate('/')
+    },
+    [currentTodo, navigate, updateTodoItem],
+  )
 
   useEffect(() => {
     setIsDrawerOpen(true)
-    inputRef.current?.focus()
-  }, [inputRef])
+  }, [])
 
   return (
     <Box
